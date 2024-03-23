@@ -10,3 +10,61 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.container-1{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.palo{
+    background-color: darkslategray;
+    width: 25px;
+    height: 150px;
+}
+.traffic-light{
+    border-radius: 10px;
+    background-color: darkslategray;
+    width: 100px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.circle{
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    margin: 10px
+}
+.light-red{
+    -webkit-box-shadow:0px 0px 105px 45px rgba(255,133,133,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(255,133,133,0.9);
+    box-shadow: 0px 0px 105px 45px rgba(255,133,133,0.9);
+}
+.light-yellow{
+    -webkit-box-shadow:0px 0px 105px 45px rgba(255, 251, 133, 0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(255, 251, 133, 0.9);
+    box-shadow: 0px 0px 105px 45px rgba(255, 251, 133, 0.9);
+}
+.light-green{
+    -webkit-box-shadow:0px 0px 105px 45px rgba(120, 251, 139, 0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(120, 251, 139, 0.9);
+    box-shadow: 0px 0px 105px 45px rgba(120, 251, 139, 0.9);
+}
+.light-purple{
+    -webkit-box-shadow:0px 0px 105px 45px rgba(247, 133, 255, 0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(247, 133, 255, 0.9);
+    box-shadow: 0px 0px 105px 45px rgba(247, 133, 255, 0.9);
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: rgb(0, 255, 0);
+}
+.purple{
+    background-color: purple;
+}

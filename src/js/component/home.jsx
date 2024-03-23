@@ -1,25 +1,53 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
 
 //create your first component
 const Home = () => {
+	const [colors, setColors]  = useState(["red", "yellow", "green"]);
+	const [activeColor, setActiveColor] = useState("")
+
+	const isActiveColor = (color) => {
+		return color == activeColor ? "light-" + color : ""  
+	};
+
+	const addColor = () => {
+		if(colors.find(a => a == "purple")){
+			return;
+		}
+		let arr = colors.map(i => {
+			return i;
+		});
+		arr.push("purple");
+		setColors(arr);
+	}
+
+	const cycleLights = () => {
+
+	}
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<div className="d-flex container-1">
+				<div className="palo">
+
+				</div>
+				<div className="traffic-light">
+					{colors.map(col => {
+						return(
+							<>
+								<div onClick={() => {
+									setActiveColor(col);
+								}} className={"circle " + isActiveColor(col) + " " + col}>
+								
+								</div>
+							</>
+						);
+					})}
+				</div>
+			</div>
+			<div className="d-flex align-items-center flex-column">
+				<button className="bg-success text-light rounded border-0 my-2" onClick={cycleLights}>Cycle lights!</button>
+				<button className="bg-primary text-light rounded border-0" onClick={addColor}>Add color</button>
+			</div>
+		</>
 	);
 };
 
