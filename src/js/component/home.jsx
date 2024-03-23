@@ -21,7 +21,17 @@ const Home = () => {
 	}
 
 	const cycleLights = () => {
-
+		let colorIndex = -1;
+		if(activeColor == ""){
+			setActiveColor("red");
+			return;
+		}
+		colorIndex = colors.findIndex(a => a == activeColor)
+		colorIndex += 1;
+		if(colorIndex == colors.length){
+			colorIndex = 0;
+		}
+		setActiveColor(colors[colorIndex]);
 	}
 	return (
 		<>
@@ -44,7 +54,7 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="d-flex align-items-center flex-column">
-				<button className="bg-success text-light rounded border-0 my-2" onClick={cycleLights}>Cycle lights!</button>
+				<button className="bg-success text-light rounded border-0 my-2" onClick={cycleLights}>Cycle light</button>
 				<button className="bg-primary text-light rounded border-0" onClick={addColor}>Add color</button>
 			</div>
 		</>
